@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090b14" />
+    <meta name="description" content="GameHub — your next favorite game is one click away." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="GameHub" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="icon" type="image/svg+xml" href="icon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <title>GameHub — Play Something Great</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="GameHub home">
+          <span class="brand-mark"><span></span><span></span><span></span><span></span></span>
+          <span>Game<span class="brand-accent">Hub</span></span>
+        </a>
+        <div class="side-label">MENU</div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link active" href="#home"><span class="nav-icon">⌂</span>Home</a>
+          <a class="nav-link" href="#discover"><span class="nav-icon">◈</span>Discover</a>
+          <a class="nav-link" id="library" href="#library"><span class="nav-icon">▤</span>My library<span class="nav-count" id="library-count">0</span></a>
+        </nav>
+        <div class="side-label genre-label">GENRES</div>
+        <nav class="genre-nav" aria-label="Game genres">
+          <button class="genre-link selected" data-genre="All"><span>✦</span>All games</button>
+          <button class="genre-link" data-genre="Action"><span>⚡</span>Action</button>
+          <button class="genre-link" data-genre="Puzzle"><span>▦</span>Puzzle</button>
+          <button class="genre-link" data-genre="Arcade"><span>◉</span>Arcade</button>
+          <button class="genre-link" data-genre="Strategy"><span>♟</span>Strategy</button>
+          <button class="genre-link" data-genre="Casual"><span>☀</span>Casual</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-note">
+            <div class="note-icon">✧</div>
+            <strong>Good games.<br />Good vibes.</strong>
+            <span>Your next favorite is waiting.</span>
+          </div>
+          <div class="profile">
+            <div class="avatar profile-avatar">P</div>
+            <div><strong class="profile-name">Player</strong><span>Account</span></div>
+            <button class="more-button" aria-label="Account settings" title="Settings">⚙</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="home">
+        <header class="topbar">
+          <button class="mobile-menu" id="menu-toggle" aria-label="Open menu">☰</button>
+          <div class="breadcrumb">GameHub <span>/</span> <strong>Discover</strong></div>
+          <div class="topbar-actions">
+            <label class="search-box">
+              <span>⌕</span>
+              <input id="search-input" type="search" placeholder="Search games..." autocomplete="off" />
+              <kbd>/</kbd>
+            </label>
+            <button class="install-button" id="install-button" type="button" aria-label="Install GameHub" title="Install GameHub"><span aria-hidden="true">↓</span><span class="install-label">Install</span></button>
+            <button class="avatar mini-avatar" aria-label="Player profile">P</button>
+          </div>
+        </header>
+
+        <section class="hero" aria-label="Featured games">
+          <div class="hero-art" id="featured-carousel" data-theme="violet" aria-roledescription="carousel">
+            <div class="hero-orb orb-one"></div>
+            <div class="hero-orb orb-two"></div>
+            <div class="hero-grid"></div>
+            <div class="hero-spark spark-one">✦</div><div class="hero-spark spark-two">✧</div>
+            <div class="hero-copy" aria-live="polite">
+              <span class="eyebrow"><span class="live-dot"></span> THIS WEEK'S PICK</span>
+              <h1 id="featured-title">Neon Dash</h1>
+              <p id="featured-description">Dodge, dash, and see how long you can last in this neon arcade favorite.</p>
+              <button class="primary-button" id="featured-play">Play Neon Dash <span>↗</span></button>
+            </div>
+            <div class="hero-illustration" aria-hidden="true">
+              <div class="planet-ring"></div>
+              <div class="planet" id="featured-emoji">⚡</div>
+              <div class="mini-planet"></div>
+              <span class="float-star star-a">✦</span><span class="float-star star-b">✧</span>
+              <div class="hero-gamepad">⌘</div>
+            </div>
+            <button class="hero-arrow hero-previous" type="button" aria-label="Previous featured game" title="Previous game (←)">←</button>
+            <button class="hero-arrow hero-next" type="button" aria-label="Next featured game" title="Next game (→)">→</button>
+            <div class="hero-pagination" aria-label="Choose a featured game">
+              <button class="pager-dot pager-current" type="button" data-slide="0" aria-label="Show Neon Dash" aria-current="true"></button>
+              <button class="pager-dot" type="button" data-slide="1" aria-label="Show Pocket Pairs"></button>
+              <button class="pager-dot" type="button" data-slide="2" aria-label="Show Cloud Nine"></button>
+              <button class="pager-dot" type="button" data-slide="3" aria-label="Show Grid Guardians"></button>
+              <b><span id="featured-index">01</span> <i>/ 04</i></b>
+            </div>
+          </div>
+        </section>
+
+        <section class="quick-stats" aria-label="GameHub stats">
+          <div><span class="stat-icon violet">▣</span><strong>24</strong><span>games to play</span></div>
+          <i></i>
+          <div><span class="stat-icon green">↗</span><strong>6</strong><span>new this week</span></div>
+          <i></i>
+          <div><span class="stat-icon orange">♡</span><strong id="favorite-stat">0</strong><span>in your library</span></div>
+          <div class="stat-message"><span class="tiny-spark">✦</span> Pick up where fun begins.</div>
+        </section>
+
+        <section class="games-section" id="discover">
+          <div class="section-heading">
+            <div><span class="eyebrow section-eyebrow">YOUR PLAYGROUND</span><h2>Find your next <span>favorite</span></h2></div>
+            <a class="see-all" href="#game-grid">See all games <span>→</span></a>
+          </div>
+          <div class="filter-row">
+            <div class="filter-pills" role="group" aria-label="Filter games">
+              <button class="filter-pill active" data-filter="All">All games <span>24</span></button>
+              <button class="filter-pill" data-filter="Trending">Trending <span>↗</span></button>
+              <button class="filter-pill" data-filter="New">New releases <span class="new-dot"></span></button>
+            </div>
+            <button class="sort-button" id="sort-button">✦ <span>Featured</span> <b>⌄</b></button>
+          </div>
+          <div class="game-grid" id="game-grid" aria-live="polite"></div>
+          <div class="empty-state" id="empty-state" hidden>
+            <span>⌕</span><h3>No games found</h3><p>Try a different search or genre.</p>
+          </div>
+          <div class="load-more-wrap"><button class="load-more" id="load-more">Show more games <span>↓</span></button></div>
+        </section>
+        <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-mark"><span></span><span></span><span></span><span></span></span><span>Game<span class="brand-accent">Hub</span></span></a><span>Made for your next little break. <span class="footer-heart">♥</span></span><span>© 2026 GameHub · Made by ethcook</span></footer>
+      </main>
+    </div>
+    <div class="account-modal" id="account-modal" hidden>
+      <section class="account-panel" role="dialog" aria-modal="true" aria-labelledby="account-title">
+        <div class="modal-head">
+          <div><span class="eyebrow section-eyebrow">YOUR PROFILE</span><h2 id="account-title">Account settings</h2></div>
+          <button class="modal-close account-close" type="button" aria-label="Close account settings">×</button>
+        </div>
+        <form class="account-form" id="account-form">
+          <label for="player-name">What should we call you?</label>
+          <input id="player-name" name="playerName" type="text" maxlength="24" autocomplete="nickname" placeholder="Enter your name" required />
+          <span class="account-hint">Your name is saved on this device.</span>
+          <div class="account-actions">
+            <button class="account-cancel" type="button">Cancel</button>
+            <button class="account-save" type="submit">Save name</button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
